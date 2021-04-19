@@ -22,6 +22,8 @@ class CloudTrailStopped(Rule):
     def rule(self, e):
         event = original_get(e)
         req_params = deep_get(event, 'requestParameters')
+        if req_params is None:
+            return False
         name = req_params.get('name', "<UNKNOWN_NAME>")
         self.description = f"CloudTrail [{name}] in account was stopped/deleted"
 

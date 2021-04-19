@@ -20,6 +20,8 @@ class AMIModifiedPublicAccess(Rule):
             return False
 
         params = deep_get(event, 'requestParameters')
+        if params is None:
+            return False
         added_perms = deep_get(params, "launchPermission", "add", "items", default=[])
 
         for item in added_perms:
