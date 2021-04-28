@@ -1,5 +1,5 @@
 from python_rules import Rule, deep_get
-from test_rules_repo_small.python_rulesets.aws_cloudtrail_rules._mapping import original_get
+from test_rules_repo_small_master.python_rulesets.aws_cloudtrail_rules._mapping import original_get
 
 # API calls that are indicative of CloudTrail changes
 CLOUDTRAIL_STOP_DELETE = {
